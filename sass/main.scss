@@ -1,187 +1,6 @@
-/* 
-=============================================================================================
-	Reset Starts
-=============================================================================================
-*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* 
-=============================================================================================
-	Reset Ends
-=============================================================================================
-*/
-/* 
-=============================================================================================
-	Mixins
-=============================================================================================
-*/
-@mixin clearfix {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* 
-=============================================================================================
-	Variables
-=============================================================================================
-*/
-
-/* Fonts*/
-$font-serif: "EB Garamond",
-serif;
-$font-sans: "Titillium Web",
-sans-serif;
-
-/* Colors*/
-$color-primary: #10292e;
-/* Menu bg*/
-$color-secondary: #149f98;
-/* Text color on menu*/
-$color-tertiary: #cccccc;
-/* Text color on the page*/
-$color-quarternary: #cc2d6f;
-$color-quintenary: #50203a;
-
-/* Standard Colors*/
-$color-white: #fff;
-$color-black: #333;
-
-/* 
-=============================================================================================
-	General Selectors
-=============================================================================================
-*/
+@import "utils";
+@import "animations";
+@import "media";
 
 * {
     box-sizing: border-box;
@@ -196,6 +15,7 @@ body {
     font-size: 1.6rem;
     font-family: $font-sans;
     overflow: hidden;
+    background-color: $color-primary;
 }
 
 /* 
@@ -214,7 +34,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-primary;
 
     .logo-box {
         width: 100%;
@@ -280,13 +99,11 @@ body {
     /* General Section styles*/
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     margin-left:  8%;
     overflow: hidden;
     top: 0;
     background: rgb(43, 46, 74);
-    visibility: hidden;
-    z-index: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -374,11 +191,13 @@ body {
     background: linear-gradient(120deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
 }
 
+
 /* 
 =============================================================================================
-	Skill specific levels
+	Section About
 =============================================================================================
 */
+
 .section-about {
     background-image: linear-gradient(90deg, rgba($color-primary, .8) 0%,
         rgba($color-quarternary, .8) 100%), url(../img/bg-4.jpg);
@@ -504,7 +323,11 @@ body {
     }
 }
 
-// Separated from normal styling for the purpose of functionality
+/* 
+=============================================================================================
+    Functionality
+=============================================================================================
+*/
 .btn--list {
     display: none; // Do not remove this line.
 }
@@ -538,193 +361,16 @@ body {
     margin-bottom: 3rem;
 }
 
-/* 
-=============================================================================================
-	Functionality
-=============================================================================================
-*/
-
 .active {
     visibility: visible;
     z-index: 1;
-    animation: expand .5s ease-out;
+    animation: expand 1.5s ease-in;
+    animation-fill-mode: forwards;
 }
 
-/* 
-=============================================================================================
-	Animations
-=============================================================================================
-*/
-
-@keyframes moveToTop {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    50% {
-        transform: translateY(-1rem);
-        opacity: .5;
-    }
-
-    100% {
-        transform: translateY(-2rem);
-        opacity: 0;
-    }
+.inactive {
+    z-index: 1;
+    animation: minimize 1.5s ease-in;
+    animation-fill-mode: forwards;
 }
 
-@keyframes expand {
-    0% {
-        opacity: .4;
-    }
-    50% {
-        opacity: .8;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* 
-=============================================================================================
-	Media Queries
-=============================================================================================
-*/
-
-@media (max-width: 575.98px) {}
-
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
-    body {
-        overflow: scroll;
-    }
-
-    .header {
-        width: 100%;
-        height: 10rem;
-        flex-direction: row;
-        justify-content: space-between;
-        overflow: visible;
-        align-items: center;
-        position: relative;
-    }
-
-    .logo {
-        width: 20%;
-    }
-
-    .nav {
-        display: none;
-        position: absolute;
-        width: 15%;
-        right: 3%;
-        bottom: -90%;
-        z-index: 10;
-        background-color: $color-primary;
-        border-bottom-right-radius: 3px;
-        border-bottom-left-radius: 3px;
-
-        &__menu {
-            display: flex;
-            flex-direction: column;
-        }
-
-        &__item {
-            display: inline-block;
-        }
-
-        &__btn:link,
-        &__btn:active,
-        &__btn:visited {
-            position: relative;
-            display: block;
-            color: $color-secondary;
-            font-size: 1.8rem;
-            padding: .8rem;
-
-            span {
-                display: none;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            i {
-                transition: all .5s;
-            }
-
-            img {
-                width: 2rem;
-                height: 2rem;
-            }
-
-            &:hover {
-                border: none;
-            }
-
-            &:hover i {
-                transform: translateY(-1.5rem);
-                opacity: 0;
-            }
-
-            &:hover span {
-                display: block;
-            }
-        }
-    }
-
-
-    .section {
-        padding: 1rem;
-        margin: 0;
-        margin-top: 10rem;
-    }
-
-    .section-content {
-        padding: 1rem;
-    }
-
-    .section-about {
-
-        .section-content {
-            width: 100%;
-        }
-
-        .nav {
-            display: block;
-            position: absolute;
-            right: 0%;
-            bottom: 5%;
-            border-top-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
-        }
-    }
-
-    .skill-table {
-        font-size: 1.4rem;
-    }
-
-    .about-list {
-        font-size: 1.3rem;
-    }
-
-    .btn--list {
-        display: block;
-    }
-
-    .menu-active {
-        display: block;
-        z-index: 2;
-    }
-
-    .paragraph {
-        font-size: 1.3rem;
-    }
-}
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {}
-
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {}
