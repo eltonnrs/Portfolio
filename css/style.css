@@ -48,6 +48,50 @@
     visibility: hidden;
   }
 }
+.heading-primary {
+  font-size: 2.8rem;
+  font-family: "EB Garamond", serif;
+  color: #fff;
+  font-weight: 700;
+}
+.heading-primary--highlight {
+  color: #149f98;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  color: #149f98;
+}
+
+.paragraph {
+  font-family: "Titillium Web", sans-serif;
+  color: #fff;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.btn--white {
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+}
+.btn--blue {
+  background-color: #10292e;
+  color: #149f98;
+  border: 2px solid #10292e;
+}
+.btn:hover {
+  transform: scale(1.2);
+}
+.btn:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -66,7 +110,7 @@ body {
 
 /* 
 =============================================================================================
-	BEM
+    BEM
 =============================================================================================
 */
 .header {
@@ -208,7 +252,7 @@ body {
 
 /* 
 =============================================================================================
-	Skill Specific Levels
+    Skill Specific Levels
 =============================================================================================
 */
 #html-lvl {
@@ -248,24 +292,14 @@ body {
 
 /* 
 =============================================================================================
-	Section About
+    Section About
 =============================================================================================
 */
 .section-about {
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg-4.jpg);
 }
-
-.about-list {
-  list-style: circle;
-  list-style-position: inside;
-}
-.about-list__item {
-  padding: 1rem;
-}
-.about-list--sub {
-  list-style: square;
-  list-style-position: inside;
-  margin-left: 1rem;
+.section-about .paragraph {
+  width: 50%;
 }
 
 .contact-card .paragraph {
@@ -273,64 +307,6 @@ body {
 }
 .contact-card i {
   margin: 0.5rem;
-}
-
-/* 
-=============================================================================================
-	Typography
-=============================================================================================
-*/
-.heading-primary {
-  font-size: 2.8rem;
-  font-family: "EB Garamond", serif;
-  color: #fff;
-  font-weight: 700;
-}
-.heading-primary--highlight {
-  color: #149f98;
-}
-
-.heading-secondary {
-  font-size: 2rem;
-  color: #149f98;
-}
-
-.paragraph {
-  font-family: "Titillium Web", sans-serif;
-  color: #fff;
-}
-
-.italic {
-  font-weight: 100;
-}
-
-/* 
-=============================================================================================
-	Components
-=============================================================================================
-*/
-.btn {
-  padding: 1rem 2rem;
-  display: inline-block;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: all 0.5s;
-}
-.btn--white {
-  color: #fff;
-  background: transparent;
-  border: 2px solid #fff;
-}
-.btn--blue {
-  background-color: #10292e;
-  color: #149f98;
-  border: 2px solid #10292e;
-}
-.btn:hover {
-  transform: scale(1.2);
-}
-.btn:not(:last-child) {
-  margin-right: 1.5rem;
 }
 
 /* 
@@ -364,7 +340,8 @@ body {
 }
 
 @media (max-width: 767.98px) {
-  body, html {
+  body,
+html {
     overflow: scroll;
     overflow-x: hidden;
   }
@@ -442,6 +419,10 @@ body {
   .portfolio__text {
     color: #fff;
     padding: 1rem;
+  }
+
+  .section-about .paragraph {
+    width: 100%;
   }
 
   .heading-secondary {

@@ -1,5 +1,7 @@
 @import "utils";
 @import "animations";
+@import "typography";
+@import "components";
 
 * {
     box-sizing: border-box;
@@ -19,7 +21,7 @@ body {
 
 /* 
 =============================================================================================
-	BEM
+    BEM
 =============================================================================================
 */
 
@@ -34,7 +36,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    .logo{
+    .logo {
         width: 100%;
     }
 }
@@ -46,8 +48,6 @@ body {
     &__menu {
         list-style: none;
     }
-
-    &__item {}
 
     &__btn:link,
     &__btn:active,
@@ -95,7 +95,7 @@ body {
     min-width: 92%;
     height: 100%;
     position: fixed;
-    margin-left:  8%;
+    margin-left: 8%;
     overflow: hidden;
     top: 0;
     background: rgb(43, 46, 74);
@@ -105,12 +105,13 @@ body {
     padding: 2rem;
 }
 
-.present{
+.present {
     position: absolute;
     left: 40%;
     top: 50%;
     transform: translate(-50%, -50%);
-    a{
+
+    a {
         display: inline-block;
     }
 }
@@ -125,21 +126,22 @@ body {
         rgba($color-quarternary, .8) 100%), url(../img/bg-2.jpg);
 }
 
-
-.skills{
-    &__block{
+.skills {
+    &__block {
         font-size: 2.6rem;
         color: $color-secondary;
         margin: 1rem 0rem;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        i{
+
+        i {
             width: 3rem;
             margin-right: 1.5rem;
         }
     }
-    &__bar{
+
+    &__bar {
         display: inline-block;
         width: 80%;
         height: 2.6rem;
@@ -148,31 +150,34 @@ body {
     }
 }
 
-.portfolio{
+.portfolio {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    &__project{
+
+    &__project {
         max-width: 28%;
         max-height: 100%;
-        // border: solid 5px $color-quarternary;
         margin: 1rem;
         border-radius: .5rem;
         display: block;
-        overflow: hidden;
+        overflow: hidden; // keeps the image from removing the border radius.
         transition: all 1s;
-        -webkit-box-shadow: 13px 13px 20px 5px rgba(0,0,0,0.8); 
-        box-shadow: 13px 13px 20px 5px rgba(0,0,0,0.8);
-        img{
-           width: 100%;
+        -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+        box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+
+        img {
+            width: 100%;
         }
-        &:hover{
+
+        &:hover {
             transform: scale(1.1);
         }
     }
-    &__text{
+
+    &__text {
         color: $color-white;
         padding: 1rem;
         font-size: 1.8rem;
@@ -181,7 +186,7 @@ body {
 
 /* 
 =============================================================================================
-	Skill Specific Levels
+    Skill Specific Levels
 =============================================================================================
 */
 #html-lvl {
@@ -208,6 +213,7 @@ body {
     background: rgb(204, 204, 204);
     background: linear-gradient(90deg, rgba(204, 204, 204, 1) 40%, rgba(80, 32, 58, 1) 40%);
 }
+
 #node-lvl {
     background: rgb(204, 204, 204);
     background: linear-gradient(90deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
@@ -221,29 +227,16 @@ body {
 
 /* 
 =============================================================================================
-	Section About
+    Section About
 =============================================================================================
 */
 
 .section-about {
     background-image: linear-gradient(90deg, rgba($color-primary, .8) 0%,
         rgba($color-quarternary, .8) 100%), url(../img/bg-4.jpg);
-}
 
-.about-list {
-    list-style: circle;
-    list-style-position: inside;
-
-    &__item {
-        padding: 1rem;
-
-        &--sub {}
-    }
-
-    &--sub {
-        list-style: square;
-        list-style-position: inside;
-        margin-left: 1rem;
+    .paragraph {
+        width: 50%;
     }
 }
 
@@ -258,67 +251,6 @@ body {
     }
 }
 
-/* 
-=============================================================================================
-	Typography
-=============================================================================================
-*/
-
-.heading-primary {
-    font-size: 2.8rem;
-    font-family: $font-serif;
-    color: $color-white;
-    font-weight: 700;
-    &--highlight {
-        color: $color-secondary;
-    }
-}
-
-.heading-secondary {
-    font-size: 2rem;
-    color: $color-secondary;
-}
-
-.paragraph {
-    font-family: $font-sans;
-    color: $color-white;
-}
-
-.italic {
-    font-weight: 100;
-}
-
-/* 
-=============================================================================================
-	Components
-=============================================================================================
-*/
-
-.btn {
-    padding: 1rem 2rem;
-    display: inline-block;
-    border-radius: .5rem;
-    text-decoration: none;
-    transition: all .5s;
-    &--white {
-        color: $color-white;
-        background: transparent;
-        border: 2px solid $color-white;
-    }
-
-    &--blue {
-        background-color: $color-primary;
-        color: $color-secondary;
-        border: 2px solid $color-primary;
-    }
-    &:hover {
-        transform: scale(1.2);
-    }
-
-    &:not(:last-child) {
-        margin-right: 1.5rem;
-    }
-}
 
 /* 
 =============================================================================================
@@ -349,26 +281,34 @@ body {
     animation: minimize 1.5s ease-in;
     animation-fill-mode: forwards;
 }
+
 @media (max-width: 767.98px) {
-    body, html{
+
+    body,
+    html {
         overflow: scroll;
         overflow-x: hidden;
     }
-    .header{
+
+    .header {
         position: relative;
         height: 10rem;
         width: 100vw;
         flex-direction: row;
-        .logo{
+
+        .logo {
             height: 100%;
             width: auto;
         }
     }
-    .nav{
+
+    .nav {
         width: auto;
-        &__item{
+
+        &__item {
             display: inline-block;
         }
+
         &__btn:link,
         &__btn:active,
         &__btn:visited {
@@ -377,6 +317,7 @@ body {
                 position: relative;
                 transform: translate(0);
             }
+
             &:hover {
                 border: none;
             }
@@ -385,62 +326,77 @@ body {
                 opacity: 1;
                 transform: translate(0);
             }
-            &:hover span{
+
+            &:hover span {
                 display: none;
             }
         }
     }
-    .section{
+
+    .section {
         position: relative;
         margin-left: 0;
         min-height: 100vh;
         padding: 5rem;
     }
-    .section-skills{
+
+    .section-skills {
         margin-top: -1rem;
         background-color: $color-primary;
         background-image: none;
         z-index: -1;
     }
-    .portfolio{
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    &__project{
-        max-width: 100%;
-        max-height: 100%;
-        // border: solid 5px $color-quarternary;
-        margin: 5rem;
-        border-radius: .5rem;
-        display: block;
-        overflow: hidden;
-        transition: all 1s;
-        -webkit-box-shadow: 13px 13px 20px 5px rgba(0,0,0,0.8); 
-        box-shadow: 13px 13px 20px 5px rgba(0,0,0,0.8);
-        img{
-           width: 100%;
-        }
-        &:hover{
-            transform: scale(1.5);
-        }
-    }
-    &__text{
-        color: $color-white;
-        padding: 1rem;
-    }
-}
 
-    .heading-secondary{
+    .portfolio {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+
+        &__project {
+            max-width: 100%;
+            max-height: 100%;
+            // border: solid 5px $color-quarternary;
+            margin: 5rem;
+            border-radius: .5rem;
+            display: block;
+            overflow: hidden;
+            transition: all 1s;
+            -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+            box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+
+        &__text {
+            color: $color-white;
+            padding: 1rem;
+        }
+    }
+
+    .section-about {
+        .paragraph {
+            width: 100%;
+        }
+    }
+
+    .heading-secondary {
         text-align: center;
     }
 
-    .inactive{
+    .inactive {
         z-index: 1;
         animation: none;
         animation-fill-mode: none;
     }
-    .active{
+
+    .active {
         z-index: 1;
         animation: none;
         animation-fill-mode: none;

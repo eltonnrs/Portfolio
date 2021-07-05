@@ -1,0 +1,27 @@
+.btn {
+    padding: 1rem 2rem;
+    display: inline-block;
+    border-radius: .5rem;
+    text-decoration: none;
+    transition: all .5s;
+
+    &--white {
+        color: $color-white;
+        background: transparent;
+        border: 2px solid $color-white;
+    }
+
+    &--blue {
+        background-color: $color-primary;
+        color: $color-secondary;
+        border: 2px solid $color-primary;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+}
