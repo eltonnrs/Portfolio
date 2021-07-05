@@ -125,27 +125,26 @@ body {
         rgba($color-quarternary, .8) 100%), url(../img/bg-2.jpg);
 }
 
-.skill-table {
-    font-size: 1.8rem;
 
-    &__row {}
-
-    &__label {
-        color: $color-white;
-        text-transform: uppercase;
-        padding-right: 1.8rem;
-    }
-
-    &__lvl {
-        background-color: white;
-        width: 80%;
-        text-align: center;
-        background: #ccc;
-        padding: 1rem 1.5rem;
+.skills{
+    &__block{
+        font-size: 2.6rem;
         color: $color-secondary;
-        font-weight: 700;
-        font-family: $font-sans;
+        margin: 1rem 0rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        i{
+            width: 3rem;
+            margin-right: 1.5rem;
+        }
+    }
+    &__bar{
+        display: inline-block;
+        width: 80%;
+        height: 2.6rem;
         border-radius: .5rem;
+        text-align: center;
     }
 }
 
@@ -187,32 +186,36 @@ body {
 */
 #html-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 85%, rgba(80, 32, 58, 1) 85%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 85%, rgba(80, 32, 58, 1) 85%);
 }
 
 #css-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 90%, rgba(80, 32, 58, 1) 90%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 90%, rgba(80, 32, 58, 1) 90%);
 }
 
 #sass-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 70%, rgba(80, 32, 58, 1) 70%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 70%, rgba(80, 32, 58, 1) 70%);
 }
 
 #js-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 50%, rgba(80, 32, 58, 1) 50%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 50%, rgba(80, 32, 58, 1) 50%);
 }
 
 #git-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 50%, rgba(80, 32, 58, 1) 50%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 40%, rgba(80, 32, 58, 1) 40%);
+}
+#node-lvl {
+    background: rgb(204, 204, 204);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
 }
 
 #react-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
 }
 
 
@@ -365,6 +368,26 @@ body {
         width: auto;
         &__item{
             display: inline-block;
+        }
+        &__btn:link,
+        &__btn:active,
+        &__btn:visited {
+            span {
+                display: none;
+                position: relative;
+                transform: translate(0);
+            }
+            &:hover {
+                border: none;
+            }
+
+            &:hover i {
+                opacity: 1;
+                transform: translate(0);
+            }
+            &:hover span{
+                display: none;
+            }
         }
     }
     .section{

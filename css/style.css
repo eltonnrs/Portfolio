@@ -156,24 +156,24 @@ body {
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg-2.jpg);
 }
 
-.skill-table {
-  font-size: 1.8rem;
-}
-.skill-table__label {
-  color: #fff;
-  text-transform: uppercase;
-  padding-right: 1.8rem;
-}
-.skill-table__lvl {
-  background-color: white;
-  width: 80%;
-  text-align: center;
-  background: #ccc;
-  padding: 1rem 1.5rem;
+.skills__block {
+  font-size: 2.6rem;
   color: #149f98;
-  font-weight: 700;
-  font-family: "Titillium Web", sans-serif;
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.skills__block i {
+  width: 3rem;
+  margin-right: 1.5rem;
+}
+.skills__bar {
+  display: inline-block;
+  width: 80%;
+  height: 2.6rem;
   border-radius: 0.5rem;
+  text-align: center;
 }
 
 .portfolio {
@@ -213,32 +213,37 @@ body {
 */
 #html-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 85%, #50203a 85%);
+  background: linear-gradient(90deg, #cccccc 85%, #50203a 85%);
 }
 
 #css-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 90%, #50203a 90%);
+  background: linear-gradient(90deg, #cccccc 90%, #50203a 90%);
 }
 
 #sass-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 70%, #50203a 70%);
+  background: linear-gradient(90deg, #cccccc 70%, #50203a 70%);
 }
 
 #js-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 50%, #50203a 50%);
+  background: linear-gradient(90deg, #cccccc 50%, #50203a 50%);
 }
 
 #git-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 50%, #50203a 50%);
+  background: linear-gradient(90deg, #cccccc 40%, #50203a 40%);
+}
+
+#node-lvl {
+  background: #cccccc;
+  background: linear-gradient(90deg, #cccccc 30%, #50203a 30%);
 }
 
 #react-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 30%, #50203a 30%);
+  background: linear-gradient(90deg, #cccccc 30%, #50203a 30%);
 }
 
 /* 
@@ -380,6 +385,21 @@ body {
   }
   .nav__item {
     display: inline-block;
+  }
+  .nav__btn:link span, .nav__btn:active span, .nav__btn:visited span {
+    display: none;
+    position: relative;
+    transform: translate(0);
+  }
+  .nav__btn:link:hover, .nav__btn:active:hover, .nav__btn:visited:hover {
+    border: none;
+  }
+  .nav__btn:link:hover i, .nav__btn:active:hover i, .nav__btn:visited:hover i {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .nav__btn:link:hover span, .nav__btn:active:hover span, .nav__btn:visited:hover span {
+    display: none;
   }
 
   .section {

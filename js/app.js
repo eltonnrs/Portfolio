@@ -2,7 +2,6 @@ const menuBtns = document.getElementsByClassName("btn--menu");
 let activeSection = document.getElementById("home");
 for(let button of menuBtns){
     button.addEventListener("click", (evt) => {
-        evt.preventDefault();
         let clicked = document.getElementById(evt.target.innerText.toLowerCase());
         /*
             If the clicked button is already active, don't change the active state

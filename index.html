@@ -17,13 +17,13 @@
 		<nav class="nav">
 			<ul class="nav__menu active">
 				<li class="nav__item">
-					<a href="#" class="nav__btn btn--menu"><i class="fas fa-home"></i><span>Home</span></a>
+					<a href="#home" class="nav__btn btn--menu"><i class="fas fa-home"></i><span>Home</span></a>
 				</li>
 				<li class="nav__item">
-					<a href="#" class="nav__btn btn--menu"><i class="fas fa-clipboard"></i><span>Skills</span></a>
+					<a href="#skills" class="nav__btn btn--menu"><i class="fas fa-clipboard"></i><span>Skills</span></a>
 				</li>
 				<li class="nav__item">
-					<a href="#" class="nav__btn btn--menu"><i class="far fa-address-card"></i><span>About</span></a>
+					<a href="#about" class="nav__btn btn--menu"><i class="far fa-address-card"></i><span>About</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -57,34 +57,32 @@
 
 		<section class="section section-skills inactive" id="skills">
 				<h2 class="heading-secondary u-margin-bottom-small">Skills</h2>
-				<table class="skill-table u-margin-bottom-small">
-                    <tbody>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">html</td>
-                            <td class="skill-table__lvl"id="html-lvl">85%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">css</td>
-                            <td class="skill-table__lvl" id="css-lvl">90%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">sass</td>
-                            <td class="skill-table__lvl" id="sass-lvl">70%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">javascript</td>
-                            <td class="skill-table__lvl" id="js-lvl">50%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                        	<td class="skill-table__label">Git/Github</td>
-                        	<td class="skill-table__lvl" id="git-lvl">50%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">React</td>
-                            <td class="skill-table__lvl" id="react-lvl">30%</td>
-                        </tr>
-                    </tbody>
-                </table>
+				<div class="skills">
+					<div class="skills__block">
+						<i class="fab fa-html5"></i>
+						<div class="skills__bar" id="html-lvl">85%</div>
+					</div>
+					<div class="skills__block">
+						<i class="fab fa-css3"></i>
+						<div class="skills__bar" id="css-lvl">90%</div>
+					</div>
+					<div class="skills__block">
+						<i class="fab fa-js-square"></i>
+						<div class="skills__bar" id="js-lvl">50%</div>
+					</div>
+					<div class="skills__block">
+						<i class="fab fa-github-square"></i>
+						<div class="skills__bar" id="git-lvl">40%</div>
+					</div>
+					<div class="skills__block">
+						<i class="fab fa-node"></i>
+						<div class="skills__bar" id="node-lvl">30%</div>
+					</div>
+					<div class="skills__block">
+						<i class="fab fa-react"></i>
+						<div class="skills__bar" id="react-lvl">30%</div>
+					</div>
+				</div>
                 <h2 class="heading-secondary u-margin-bottom-small">Portfolio</h2>
                 <div class="portfolio">
                 	<div class="portfolio__project">
