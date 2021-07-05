@@ -13,9 +13,7 @@
 </head>
 <body>
 	<header class="header">
-		<div class="logo-box">
-			<img src="img/logo.png" alt="logo" class="logo">
-		</div>
+		<img src="img/logo.png" alt="logo" class="logo">
 		<nav class="nav">
 			<ul class="nav__menu active">
 				<li class="nav__item">
@@ -42,41 +40,24 @@
 				</li>
 			</ul>
 		</nav>
-		<button class="btn btn--list">
-			<i class="hamburguer fas fa-align-justify active"></i>
-			<i class="cancel fas fa-times"></i>
-		</button>
 	</header>
 	<main>
-		<!-- 
-		=============================================================================
-			Start of Session Home
-		=============================================================================
-		 -->
+
 		<section class="section section-home active" id="home">
-			<div class="section-content">
+			<div class="present">
 				<h1 class="heading-primary u-margin-bottom-medium">
 					Hi! My name's Elton and I'm a <span class="heading-primary--highlight">Front-End Developer</span>
 				</h1>
-				<a href="#" class="btn btn--white btn-hire">Hire Me</a>
-				<a href="#" class="btn btn--blue btn-projects">See my Projects</a>
+				<div class="call-for-action">
+					<a href="#" class="btn btn--white btn-hire">Hire Me</a>
+					<a href="#" class="btn btn--blue btn-projects">See my Projects</a>
+				</div>
 			</div>
 		</section>
-		<!-- 
-		=============================================================================
-			End of Session Home
-		=============================================================================
-		 -->
 
-		<!-- 
-		=============================================================================
-			Start of Session Skills
-		=============================================================================
-		 -->
 		<section class="section section-skills inactive" id="skills">
-			<div class="section-content">
-				<h2 class="heading-secondary">Skills</h2>
-				<table class="skill-table">
+				<h2 class="heading-secondary u-margin-bottom-small">Skills</h2>
+				<table class="skill-table u-margin-bottom-small">
                     <tbody>
                         <tr class="skill-table__row">
                             <td class="skill-table__label">html</td>
@@ -104,24 +85,29 @@
                         </tr>
                     </tbody>
                 </table>
-                <h2 class="heading-secondary">Projects</h2>
-                <p class="paragraph italic">Whoops! This seems a little empty!</p>
-			</div>
+                <h2 class="heading-secondary u-margin-bottom-small">Portfolio</h2>
+                <div class="portfolio">
+                	<div class="portfolio__project">
+                		<a href="https://eltonnrs.github.io/profile-card-component-main/">
+                			<img src="img/project-3.png" alt="">
+                		</a>
+                		<p class="portfolio__text">Although the project is small, it was a little bit harder than I expected, specially having to put two background images in the right places. I Ended up using ::after and ::before pseudo-elements, and that decision made me learn a lot about those elements.</p>
+                	</div>
+                	<div class="portfolio__project">
+                		<a href="https://eltonnrs.github.io/blogr-landing-page-main/">
+                			<img src="img/project-2.png" alt="">
+                			<p class="portfolio__text">This project was the most challenging project in terms of responsive design, and I learned a lot about reducing code by using reusable classes and making every section follow a pattern.</p>
+                		</a>
+                	</div>
+                	<div class="portfolio__project">
+                		<a href="https://eltonnrs.github.io/todo-app-main/">
+                			<img src="img/project-1.png" alt="">
+                		</a>
+                		<p class="portfolio__text">Adding notes to a block of elements is not difficult, what's difficult is trying to do it with less lines of code every time. I didn't do a great job here, but at the same time I learned a lot too.</p>
+                	</div>
+                </div>                 
 		</section>
-		<!-- 
-		=============================================================================
-			End of Session Skills
-		=============================================================================
-		 -->
-
-		<!-- 
-		=============================================================================
-			Start of Session About Me
-		=============================================================================
-		 -->
-
 		 <section class="section section-about inactive" id="about">
-		 	<div class="section-content">
 		 		<h2 class="heading-secondary u-margin-bottom-small">About Me</h2>
 		 		<p class="paragraph u-margin-bottom-medium">
 		 			I'm a Web Developer from Brazil, with an enthusiasm for design
@@ -150,20 +136,6 @@
 	                <p class="paragraph"><i class="fas fa-map-marker-alt highlight"></i>Fortaleza, CE. Brazil</p>
 	                <p class="paragraph"><i class="fas fa-envelope highlight"></i>eltonnrs25@gmail.com</p>
                 </div>
-                <nav class="nav">
-					<ul class="nav__menu">
-						<li class="nav__item">
-							<a href="#" class="nav__btn"><img src="img/icons/instagram.png" alt=""></a>
-						</li>
-						<li class="nav__item">
-							<a href="#" class="nav__btn"><img src="img/icons/linkedin.png" alt=""></a>
-						</li>
-						<li class="nav__item">
-							<a href="#" class="nav__btn"><img src="img/icons/twitter.png" alt=""></a>
-						</li>
-					</ul>
-				</nav>
-		 	</div>
 		 </section>
 	</main>
 	<script src="js/app.js"></script>

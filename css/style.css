@@ -80,9 +80,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header .logo-box {
-  width: 100%;
-}
 .header .logo {
   width: 100%;
 }
@@ -128,7 +125,7 @@ body {
 
 .section {
   /* General Section styles*/
-  width: 100%;
+  min-width: 92%;
   height: 100%;
   position: fixed;
   margin-left: 8%;
@@ -138,23 +135,25 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.section-content {
-  /* General content styles*/
   padding: 2rem;
 }
 
+.present {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.present a {
+  display: inline-block;
+}
+
 .section-home {
-  display: flex;
-  align-items: center;
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg.jpg);
 }
+
 .section-skills {
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg-2.jpg);
-}
-.section-skills .section-content {
-  /* Specific code for skills content*/
 }
 
 .skill-table {
@@ -175,6 +174,36 @@ body {
   font-weight: 700;
   font-family: "Titillium Web", sans-serif;
   border-radius: 0.5rem;
+}
+
+.portfolio {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.portfolio__project {
+  max-width: 28%;
+  max-height: 100%;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  display: block;
+  overflow: hidden;
+  transition: all 1s;
+  -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+}
+.portfolio__project img {
+  width: 100%;
+}
+.portfolio__project:hover {
+  transform: scale(1.1);
+}
+.portfolio__text {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.8rem;
 }
 
 /* 
@@ -219,14 +248,6 @@ body {
 */
 .section-about {
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg-4.jpg);
-}
-.section-about .section-content {
-  color: #fff;
-  width: 50%;
-  font-size: 1.8rem;
-}
-.section-about .nav {
-  display: none;
 }
 
 .about-list {
@@ -300,22 +321,6 @@ body {
   color: #149f98;
   border: 2px solid #10292e;
 }
-.btn--list, .btn--list:focus {
-  padding: 0.5rem;
-  height: 100%;
-  width: 25%;
-  font-size: 3rem;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: #149f98;
-  position: relative;
-}
-.btn--list::after .clearfix::before, .btn--list::after .clearfix::after {
-  content: " ";
-  display: table;
-  clear: both;
-}
 .btn:hover {
   transform: scale(1.2);
 }
@@ -328,27 +333,6 @@ body {
     Functionality
 =============================================================================================
 */
-.btn--list {
-  display: none;
-}
-
-.hamburguer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
-}
-
-.cancel {
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
-}
-
 .u-margin-bottom-small {
   margin-bottom: 1rem;
 }
@@ -372,6 +356,89 @@ body {
   z-index: 1;
   animation: minimize 1.5s ease-in;
   animation-fill-mode: forwards;
+}
+
+@media (max-width: 767.98px) {
+  body, html {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  .header {
+    position: relative;
+    height: 10rem;
+    width: 100vw;
+    flex-direction: row;
+  }
+  .header .logo {
+    height: 100%;
+    width: auto;
+  }
+
+  .nav {
+    width: auto;
+  }
+  .nav__item {
+    display: inline-block;
+  }
+
+  .section {
+    position: relative;
+    margin-left: 0;
+    min-height: 100vh;
+    padding: 5rem;
+  }
+
+  .section-skills {
+    margin-top: -1rem;
+    background-color: #10292e;
+    background-image: none;
+    z-index: -1;
+  }
+
+  .portfolio {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .portfolio__project {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 5rem;
+    border-radius: 0.5rem;
+    display: block;
+    overflow: hidden;
+    transition: all 1s;
+    -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+  }
+  .portfolio__project img {
+    width: 100%;
+  }
+  .portfolio__project:hover {
+    transform: scale(1.5);
+  }
+  .portfolio__text {
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .heading-secondary {
+    text-align: center;
+  }
+
+  .inactive {
+    z-index: 1;
+    animation: none;
+    animation-fill-mode: none;
+  }
+
+  .active {
+    z-index: 1;
+    animation: none;
+    animation-fill-mode: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
