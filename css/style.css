@@ -1,158 +1,80 @@
-/* 
-=============================================================================================
-	Reset Starts
-=============================================================================================
-*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol,
-ul {
-  list-style: none; }
-
-blockquote,
-q {
-  quotes: none; }
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-/* 
-=============================================================================================
-	Reset Ends
-=============================================================================================
-*/
-/* 
-=============================================================================================
-	Mixins
-=============================================================================================
-*/
-/* 
-=============================================================================================
-	Variables
-=============================================================================================
-*/
 /* Fonts*/
 /* Colors*/
 /* Menu bg*/
 /* Text color on menu*/
 /* Text color on the page*/
 /* Standard Colors*/
-/* 
-=============================================================================================
-	General Selectors
-=============================================================================================
-*/
+@keyframes moveToTop {
+  0% {
+    transform: translateY(0);
+    opacity: 1; }
+  50% {
+    transform: translateY(-1rem);
+    opacity: .5; }
+  100% {
+    transform: translateY(-2rem);
+    opacity: 0; } }
+
+@keyframes expand {
+  0% {
+    transform: scale(0.5) translateX(100%);
+    opacity: .5; }
+  50% {
+    transform: scale(0.5) translateX(50%);
+    opacity: .8; }
+  100% {
+    transform: scale(1) translate(0);
+    opacity: 1;
+    visibility: visible; } }
+
+@keyframes minimize {
+  0% {
+    transform: scale(1) translateX(0);
+    opacity: 1; }
+  50% {
+    transform: scale(0.8) translateX(50%);
+    opacity: .8; }
+  100% {
+    transform: scale(0.6) translateX(100%);
+    opacity: 0;
+    visibility: hidden; } }
+
+.heading-primary {
+  font-size: 3.5rem;
+  font-family: "EB Garamond", serif;
+  color: #fff;
+  font-weight: 700; }
+  .heading-primary--highlight {
+    color: #149f98;
+    display: block; }
+
+.heading-secondary {
+  font-size: 2rem;
+  color: #149f98; }
+
+.paragraph {
+  font-family: "Titillium Web", sans-serif;
+  color: #fff; }
+
+.btn {
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: all .5s; }
+  .btn--white {
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff; }
+  .btn--blue {
+    background-color: #10292e;
+    color: #149f98;
+    border: 2px solid #10292e; }
+  .btn:hover {
+    transform: scale(1.2); }
+  .btn:not(:last-child) {
+    margin-right: 1.5rem; }
+
 * {
   box-sizing: border-box; }
 
@@ -163,11 +85,12 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Titillium Web", sans-serif;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #10292e; }
 
 /* 
 =============================================================================================
-	BEM
+    BEM
 =============================================================================================
 */
 .header {
@@ -179,10 +102,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  background-color: #10292e; }
-  .header .logo-box {
-    width: 100%; }
+  align-items: center; }
   .header .logo {
     width: 100%; }
 
@@ -218,102 +138,117 @@ body {
 
 .section {
   /* General Section styles*/
-  width: 100%;
+  min-width: 92%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   margin-left: 8%;
   overflow: hidden;
   top: 0;
   background: #2b2e4a;
-  visibility: hidden;
-  z-index: 0;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; }
-
-.section-content {
-  /* General content styles*/
+  background-repeat: no-repeat;
   padding: 2rem; }
 
+.present {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+  .present a {
+    display: inline-block; }
+
 .section-home {
-  display: flex;
-  align-items: center;
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg.jpg); }
 
 .section-skills {
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg-2.jpg); }
-  .section-skills .section-content {
-    /* Specific code for skills content*/ }
 
-.skill-table {
-  font-size: 1.8rem; }
-  .skill-table__label {
+.skills__block {
+  font-size: 2.6rem;
+  color: #149f98;
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .skills__block i {
+    width: 3rem;
+    margin-right: 1.5rem; }
+
+.skills__bar {
+  display: inline-block;
+  width: 80%;
+  height: 2.6rem;
+  border-radius: .5rem;
+  text-align: center; }
+
+.portfolio {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around; }
+  .portfolio__project {
+    max-width: 28%;
+    max-height: 100%;
+    margin: 1rem;
+    border-radius: .5rem;
+    display: block;
+    overflow: hidden;
+    transition: all 1s;
+    -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8); }
+    .portfolio__project img {
+      width: 100%; }
+    .portfolio__project:hover {
+      transform: scale(1.1); }
+  .portfolio__text {
     color: #fff;
-    text-transform: uppercase;
-    padding-right: 1.8rem; }
-  .skill-table__lvl {
-    background-color: white;
-    width: 80%;
-    text-align: center;
-    background: #ccc;
-    padding: 1rem 1.5rem;
-    color: #149f98;
-    font-weight: 700;
-    font-family: "Titillium Web", sans-serif;
-    border-radius: .5rem; }
+    padding: 1rem;
+    font-size: 1.8rem; }
 
 /* 
 =============================================================================================
-	Skill Specific Levels
+    Skill Specific Levels
 =============================================================================================
 */
 #html-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 85%, #50203a 85%); }
+  background: linear-gradient(90deg, #cccccc 85%, #50203a 85%); }
 
 #css-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 90%, #50203a 90%); }
+  background: linear-gradient(90deg, #cccccc 90%, #50203a 90%); }
 
 #sass-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 70%, #50203a 70%); }
+  background: linear-gradient(90deg, #cccccc 70%, #50203a 70%); }
 
 #js-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 50%, #50203a 50%); }
+  background: linear-gradient(90deg, #cccccc 50%, #50203a 50%); }
 
 #git-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 50%, #50203a 50%); }
+  background: linear-gradient(90deg, #cccccc 40%, #50203a 40%); }
+
+#node-lvl {
+  background: #cccccc;
+  background: linear-gradient(90deg, #cccccc 30%, #50203a 30%); }
 
 #react-lvl {
   background: #cccccc;
-  background: linear-gradient(120deg, #cccccc 30%, #50203a 30%); }
+  background: linear-gradient(90deg, #cccccc 30%, #50203a 30%); }
 
 /* 
 =============================================================================================
-	Skill specific levels
+    Section About
 =============================================================================================
 */
 .section-about {
   background-image: linear-gradient(90deg, rgba(16, 41, 46, 0.8) 0%, rgba(204, 45, 111, 0.8) 100%), url(../img/bg-4.jpg); }
-  .section-about .section-content {
-    color: #fff;
-    width: 50%;
-    font-size: 1.8rem; }
-  .section-about .nav {
-    display: none; }
-
-.about-list {
-  list-style: circle;
-  list-style-position: inside; }
-  .about-list__item {
-    padding: 1rem; }
-  .about-list--sub {
-    list-style: square;
-    list-style-position: inside;
-    margin-left: 1rem; }
+  .section-about .paragraph {
+    width: 50%; }
 
 .contact-card .paragraph {
   padding: 1rem; }
@@ -323,84 +258,9 @@ body {
 
 /* 
 =============================================================================================
-	Typography
+    Functionality
 =============================================================================================
 */
-.heading-primary {
-  font-size: 2.8rem;
-  font-family: "EB Garamond", serif;
-  color: #fff;
-  font-weight: 700; }
-  .heading-primary--highlight {
-    color: #149f98; }
-
-.heading-secondary {
-  font-size: 2rem;
-  color: #149f98; }
-
-.paragraph {
-  font-family: "Titillium Web", sans-serif;
-  color: #fff; }
-
-.italic {
-  font-weight: 100; }
-
-/* 
-=============================================================================================
-	Components
-=============================================================================================
-*/
-.btn {
-  padding: 1rem 2rem;
-  display: inline-block;
-  border-radius: .5rem;
-  text-decoration: none;
-  transition: all .5s; }
-  .btn--white {
-    color: #fff;
-    background: transparent;
-    border: 2px solid #fff; }
-  .btn--blue {
-    background-color: #10292e;
-    color: #149f98;
-    border: 2px solid #10292e; }
-  .btn--list, .btn--list:focus {
-    padding: .5rem;
-    height: 100%;
-    width: 25%;
-    font-size: 3rem;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: #149f98;
-    position: relative; }
-  .btn--list::after {
-    content: "";
-    clear: both;
-    display: table; }
-  .btn:hover {
-    transform: scale(1.2); }
-  .btn:not(:last-child) {
-    margin-right: 1.5rem; }
-
-.btn--list {
-  display: none; }
-
-.hamburguer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden; }
-
-.cancel {
-  visibility: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden; }
-
 .u-margin-bottom-small {
   margin-bottom: 1rem; }
 
@@ -410,120 +270,86 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 3rem; }
 
-/* 
-=============================================================================================
-	Functionality
-=============================================================================================
-*/
 .active {
   visibility: visible;
   z-index: 1;
-  animation: expand .5s ease-out; }
+  animation: expand 1.5s ease-in;
+  animation-fill-mode: forwards; }
 
-/* 
-=============================================================================================
-	Animations
-=============================================================================================
-*/
-@keyframes moveToTop {
-  0% {
-    transform: translateY(0);
-    opacity: 1; }
-  50% {
-    transform: translateY(-1rem);
-    opacity: .5; }
-  100% {
-    transform: translateY(-2rem);
-    opacity: 0; } }
+.inactive {
+  z-index: 1;
+  animation: minimize 1.5s ease-in;
+  animation-fill-mode: forwards; }
 
-@keyframes expand {
-  0% {
-    opacity: .4; }
-  50% {
-    opacity: .8; }
-  100% {
-    opacity: 1; } }
-
-/* 
-=============================================================================================
-	Media Queries
-=============================================================================================
-*/
 @media (max-width: 767.98px) {
-  body {
-    overflow: scroll; }
+  body,
+  html {
+    overflow: scroll;
+    overflow-x: hidden; }
   .header {
-    width: 100%;
+    position: relative;
     height: 10rem;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow: visible;
-    align-items: center;
-    position: relative; }
-  .logo {
-    width: 20%; }
+    width: 100vw;
+    flex-direction: row; }
+    .header .logo {
+      height: 100%;
+      width: auto; }
   .nav {
-    display: none;
-    position: absolute;
-    width: 15%;
-    right: 3%;
-    bottom: -90%;
-    z-index: 10;
-    background-color: #10292e;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; }
-    .nav__menu {
-      display: flex;
-      flex-direction: column; }
+    width: auto; }
     .nav__item {
       display: inline-block; }
-    .nav__btn:link, .nav__btn:active, .nav__btn:visited {
+    .nav__btn:link span, .nav__btn:active span, .nav__btn:visited span {
+      display: none;
       position: relative;
-      display: block;
-      color: #149f98;
-      font-size: 1.8rem;
-      padding: .8rem; }
-      .nav__btn:link span, .nav__btn:active span, .nav__btn:visited span {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); }
-      .nav__btn:link i, .nav__btn:active i, .nav__btn:visited i {
-        transition: all .5s; }
-      .nav__btn:link img, .nav__btn:active img, .nav__btn:visited img {
-        width: 2rem;
-        height: 2rem; }
-      .nav__btn:link:hover, .nav__btn:active:hover, .nav__btn:visited:hover {
-        border: none; }
-      .nav__btn:link:hover i, .nav__btn:active:hover i, .nav__btn:visited:hover i {
-        transform: translateY(-1.5rem);
-        opacity: 0; }
-      .nav__btn:link:hover span, .nav__btn:active:hover span, .nav__btn:visited:hover span {
-        display: block; }
+      transform: translate(0); }
+    .nav__btn:link:hover, .nav__btn:active:hover, .nav__btn:visited:hover {
+      border: none; }
+    .nav__btn:link:hover i, .nav__btn:active:hover i, .nav__btn:visited:hover i {
+      opacity: 1;
+      transform: translate(0); }
+    .nav__btn:link:hover span, .nav__btn:active:hover span, .nav__btn:visited:hover span {
+      display: none; }
   .section {
-    padding: 1rem;
-    margin: 0;
-    margin-top: 10rem; }
-  .section-content {
-    padding: 1rem; }
-  .section-about .section-content {
+    position: relative;
+    margin-left: 0;
+    min-height: 100vh;
+    padding: 5rem; }
+  .section-skills {
+    margin-top: -1rem;
+    background-color: #10292e;
+    background-image: none;
+    z-index: -1; }
+  .portfolio {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column; }
+    .portfolio__project {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 5rem;
+      border-radius: .5rem;
+      display: block;
+      overflow: hidden;
+      transition: all 1s;
+      -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+      box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8); }
+      .portfolio__project img {
+        width: 100%; }
+      .portfolio__project:hover {
+        transform: scale(1.5); }
+    .portfolio__text {
+      color: #fff;
+      padding: 1rem; }
+  .section-about .paragraph {
     width: 100%; }
-  .section-about .nav {
-    display: block;
-    position: absolute;
-    right: 0%;
-    bottom: 5%;
-    border-top-left-radius: .5rem;
-    border-bottom-right-radius: .5rem; }
-  .skill-table {
-    font-size: 1.4rem; }
-  .about-list {
-    font-size: 1.3rem; }
-  .btn--list {
-    display: block; }
-  .menu-active {
-    display: block;
-    z-index: 2; }
-  .paragraph {
-    font-size: 1.3rem; } }
+  .heading-secondary {
+    text-align: center; }
+  .inactive {
+    z-index: 1;
+    animation: none;
+    animation-fill-mode: none; }
+  .active {
+    z-index: 1;
+    animation: none;
+    animation-fill-mode: none; } }

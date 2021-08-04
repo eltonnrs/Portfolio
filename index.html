@@ -1,171 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Elton Soares|Front-End Dev</title>
-	<link rel="icon" type="image/ico" href="img/icons/favicon.ico"/>
-	<script src="https://kit.fontawesome.com/fd8a70ff68.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elton Soares|Front-End Dev</title>
+    <link rel="icon" type="image/ico" href="img/icons/favicon.ico" />
+    <script src="https://kit.fontawesome.com/fd8a70ff68.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Titillium+Web:wght@200;400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/minified.css">
-	<!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-	<header class="header">
-		<div class="logo-box">
-			<img src="img/logo.png" alt="Logo" class="logo active">
-		</div>
-		<nav class="nav">
-			<ul class="nav__menu active">
-				<li class="nav__item">
-					<a href="#" class="nav__btn btn-home"><i class="fas fa-home"></i><span>Home</span></a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__btn btn-skills"><i class="fas fa-clipboard"></i><span>Skills</span></a>
-				</li>
-				<li class="nav__item">
-					<a href="#" class="nav__btn btn-about"><i class="far fa-address-card"></i><span>About</span></a>
-				</li>
-			</ul>
-		</nav>
-		<nav class="nav">
-			<ul class="nav__menu">
-				<li class="nav__item">
-					<a href="https://www.instagram.com/elton_webdev/" target="_blank" class="nav__btn"><img src="img/icons/instagram.png" alt="Instagram icon"></a>
-				</li>
-				<li class="nav__item">
-					<a href="https://www.linkedin.com/in/elton-soares-7bb1571b9/" target="_blank"class="nav__btn"><img src="img/icons/linkedin.png" alt="linkedin icon"></a>
-				</li>
-				<li class="nav__item">
-					<a href="https://twitter.com/eltonnrs" target="_blank" class="nav__btn"><img src="img/icons/twitter.png" alt="twitter icon"></a>
-				</li>
-			</ul>
-		</nav>
-		<button class="btn btn--list">
-			<i class="hamburguer fas fa-align-justify active"></i>
-			<i class="cancel fas fa-times"></i>
-		</button>
-	</header>
-	<main>
-		<!-- 
-		=============================================================================
-			Start of Session Home
-		=============================================================================
-		 -->
-		<section class="section section-home active" id="home">
-			<div class="section-content">
-				<h1 class="heading-primary u-margin-bottom-medium">
-					Hi! My name's Elton and I'm a <span class="heading-primary--highlight">Front-End Developer</span>
-				</h1>
-				<a href="#" class="btn btn--white btn-hire">Hire Me</a>
-				<a href="#" class="btn btn--blue btn-projects">See my Projects</a>
-			</div>
-		</section>
-		<!-- 
-		=============================================================================
-			End of Session Home
-		=============================================================================
-		 -->
-
-		<!-- 
-		=============================================================================
-			Start of Session Skills
-		=============================================================================
-		 -->
-		<section class="section section-skills" id="skills">
-			<div class="section-content">
-				<h2 class="heading-secondary">Skills</h2>
-				<table class="skill-table">
-                    <tbody>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">html</td>
-                            <td class="skill-table__lvl"id="html-lvl">85%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">css</td>
-                            <td class="skill-table__lvl" id="css-lvl">90%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">sass</td>
-                            <td class="skill-table__lvl" id="sass-lvl">70%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">javascript</td>
-                            <td class="skill-table__lvl" id="js-lvl">50%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                        	<td class="skill-table__label">Git/Github</td>
-                        	<td class="skill-table__lvl" id="git-lvl">50%</td>
-                        </tr>
-                        <tr class="skill-table__row">
-                            <td class="skill-table__label">React</td>
-                            <td class="skill-table__lvl" id="react-lvl">30%</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h2 class="heading-secondary">Projects</h2>
-                <p class="paragraph italic">Whoops! This seems a little empty!</p>
-			</div>
-		</section>
-		<!-- 
-		=============================================================================
-			End of Session Skills
-		=============================================================================
-		 -->
-
-		<!-- 
-		=============================================================================
-			Start of Session About Me
-		=============================================================================
-		 -->
-
-		 <section class="section section-about" id="about">
-		 	<div class="section-content">
-		 		<h2 class="heading-secondary u-margin-bottom-small">About Me</h2>
-		 		<p class="paragraph u-margin-bottom-medium">
-		 			I'm a Web Developer from Brazil, with an enthusiasm for design
-		 			and everything art related. I've been studying since last year, and
-                    I have some experience developing websites to train my skills.
-                </p>
-                <h2 class="heading-secondary u-margin-bottom-small">Soft Skills</h2>
-                <ul class="about-list">
-                    <li class="about-list__item">I am 21</li>
-                    <li class="about-list__item">My hobbies include:
-                        <ul class="about-list--sub">
-                            <li class="about-list__item--sub">Writing</li>
-                            <li class="about-list__item--sub">Reading</li>
-                            <li class="about-list__item--sub">Drawing</li>
-                            <li class="about-list__item--sub">Cycling</li>
-                        </ul>
-                    </li>
-                    <li class="about-list__item">I'm very good at googling anything</li>
-                    <li class="about-list__item">I read 400 page books in two days</li>
-                    <li class="about-list__item">I love psychology related topics</li>
-                </ul>
-                <div class="contact-card">
-               		<h2 class="heading-secondary u-margin-bottom-small">Contact</h2>
-	                <p class="paragraph">Like what you see? Get in touch</p>
-	                <p class="paragraph"><i class="fas fa-phone highlight"></i>+55 (85) 9 8886-9321</p>
-	                <p class="paragraph"><i class="fas fa-map-marker-alt highlight"></i>Fortaleza, CE. Brazil</p>
-	                <p class="paragraph"><i class="fas fa-envelope highlight"></i>eltonnrs25@gmail.com</p>
+    <header class="header">
+        <img src="img/logo.png" alt="logo" class="logo">
+        <nav class="nav">
+            <ul class="nav__menu active" id="menu">
+                <li class="nav__item">
+                    <a href="#home" class="nav__btn btn--menu"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li class="nav__item">
+                    <a href="#skills" class="nav__btn btn--menu"><i class="fas fa-clipboard"></i><span>Skills</span></a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__btn btn--menu"><i class="far fa-address-card"></i><span>About</span></a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav">
+            <ul class="nav__menu">
+                <li class="nav__item">
+                    <a href="https://www.instagram.com/elton_webdev/" target="_blank" class="nav__btn"><img src="img/icons/instagram.png" alt="Instagram icon"></a>
+                </li>
+                <li class="nav__item">
+                    <a href="https://www.linkedin.com/in/elton-soares-7bb1571b9/" target="_blank" class="nav__btn"><img src="img/icons/linkedin.png" alt="linkedin icon"></a>
+                </li>
+                <li class="nav__item">
+                    <a href="https://twitter.com/eltonn_dev" target="_blank" class="nav__btn"><img src="img/icons/twitter.png" alt="twitter icon"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section section-home active" id="home">
+            <div class="present">
+                <h1 class="heading-primary u-margin-bottom-medium">
+                    Hi! My name's Elton and I'm a <span class="heading-primary--highlight">Front-End Developer</span>
+                </h1>
+            </div>
+        </section>
+        <section class="section section-skills inactive" id="skills">
+            <h2 class="heading-secondary u-margin-bottom-small">Skills</h2>
+            <div class="skills">
+                <div class="skills__block">
+                    <i class="fab fa-html5"></i>
+                    <div class="skills__bar" id="html-lvl">85%</div>
                 </div>
-                <nav class="nav">
-					<ul class="nav__menu">
-						<li class="nav__item">
-							<a href="#" class="nav__btn"><img src="img/icons/instagram.png" alt=""></a>
-						</li>
-						<li class="nav__item">
-							<a href="#" class="nav__btn"><img src="img/icons/linkedin.png" alt=""></a>
-						</li>
-						<li class="nav__item">
-							<a href="#" class="nav__btn"><img src="img/icons/twitter.png" alt=""></a>
-						</li>
-					</ul>
-				</nav>
-		 	</div>
-		 </section>
-	</main>
-	<script src="js/minified.js"></script>
+                <div class="skills__block">
+                    <i class="fab fa-css3"></i>
+                    <div class="skills__bar" id="css-lvl">90%</div>
+                </div>
+                <div class="skills__block">
+                    <i class="fab fa-js-square"></i>
+                    <div class="skills__bar" id="js-lvl">50%</div>
+                </div>
+                <div class="skills__block">
+                    <i class="fab fa-github-square"></i>
+                    <div class="skills__bar" id="git-lvl">40%</div>
+                </div>
+                <div class="skills__block">
+                    <i class="fab fa-node"></i>
+                    <div class="skills__bar" id="node-lvl">30%</div>
+                </div>
+                <div class="skills__block">
+                    <i class="fab fa-react"></i>
+                    <div class="skills__bar" id="react-lvl">30%</div>
+                </div>
+            </div>
+            <h2 class="heading-secondary u-margin-bottom-small">Portfolio</h2>
+            <div class="portfolio">
+                <div class="portfolio__project">
+                    <a href="https://eltonnrs.github.io/profile-card-component-main/">
+                        <img src="img/project-3.png" alt="">
+                    </a>
+                    <p class="portfolio__text">Although the project is small, it was a little bit harder than I expected, specially having to put two background images in the right places. I Ended up using ::after and ::before pseudo-elements, and that decision made me learn a lot about those elements.</p>
+                </div>
+                <div class="portfolio__project">
+                    <a href="https://eltonnrs.github.io/blogr-landing-page-main/">
+                        <img src="img/project-2.png" alt="">
+                        <p class="portfolio__text">This project was the most challenging project in terms of responsive design, and I learned a lot about reducing code by using reusable classes and making every section follow a pattern.</p>
+                    </a>
+                </div>
+                <div class="portfolio__project">
+                    <a href="https://eltonnrs.github.io/todo-app-main/">
+                        <img src="img/project-1.png" alt="">
+                    </a>
+                    <p class="portfolio__text">Adding notes to a block of elements is not difficult, what's difficult is trying to do it with less lines of code every time. I didn't do a great job here, but at the same time I learned a lot too.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-about inactive" id="about">
+            <h2 class="heading-secondary u-margin-bottom-small">About Me</h2>
+            <p class="paragraph u-margin-bottom-medium">
+                I'm a Web Developer from Brazil, with an enthusiasm for design
+                and everything art related. I've been studying since last year, and
+                I have some experience developing websites to train my skills.
+                I'm very fond of working with react, even though I'm still learning and I'm very excited to work in any project, specially the ones with a lot of animations.
+            </p>
+            <div class="contact-card">
+                <h2 class="heading-secondary u-margin-bottom-small">Contact</h2>
+                <p class="paragraph">Like what you see? Get in touch</p>
+                <p class="paragraph"><i class="fas fa-phone highlight"></i>+55 (85) 9 8886-9321</p>
+                <p class="paragraph"><i class="fas fa-map-marker-alt highlight"></i>Fortaleza, CE. Brazil</p>
+                <p class="paragraph"><i class="fas fa-envelope highlight"></i>eltonnrs25@gmail.com</p>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

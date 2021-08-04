@@ -1,0 +1,25 @@
+/* Fonts*/
+$font-serif: "EB Garamond", serif;
+$font-sans: "Titillium Web", sans-serif;
+
+/* Colors*/
+$color-primary: #10292e;
+/* Menu bg*/
+$color-secondary: #149f98;
+/* Text color on menu*/
+$color-tertiary: #cccccc;
+/* Text color on the page*/
+$color-quarternary: #cc2d6f;
+$color-quintenary: #50203a;
+
+/* Standard Colors*/
+$color-white: #fff;
+$color-black: #333;
+
+@mixin clearfix{
+	.clearfix::before, .clearfix::after {
+  		content: ' ';
+	 	display: table;
+	 	clear: both;
+	}
+}

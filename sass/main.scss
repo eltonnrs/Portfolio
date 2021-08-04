@@ -1,187 +1,7 @@
-/* 
-=============================================================================================
-	Reset Starts
-=============================================================================================
-*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* 
-=============================================================================================
-	Reset Ends
-=============================================================================================
-*/
-/* 
-=============================================================================================
-	Mixins
-=============================================================================================
-*/
-@mixin clearfix {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* 
-=============================================================================================
-	Variables
-=============================================================================================
-*/
-
-/* Fonts*/
-$font-serif: "EB Garamond",
-serif;
-$font-sans: "Titillium Web",
-sans-serif;
-
-/* Colors*/
-$color-primary: #10292e;
-/* Menu bg*/
-$color-secondary: #149f98;
-/* Text color on menu*/
-$color-tertiary: #cccccc;
-/* Text color on the page*/
-$color-quarternary: #cc2d6f;
-$color-quintenary: #50203a;
-
-/* Standard Colors*/
-$color-white: #fff;
-$color-black: #333;
-
-/* 
-=============================================================================================
-	General Selectors
-=============================================================================================
-*/
+@import "utils";
+@import "animations";
+@import "typography";
+@import "components";
 
 * {
     box-sizing: border-box;
@@ -196,11 +16,12 @@ body {
     font-size: 1.6rem;
     font-family: $font-sans;
     overflow: hidden;
+    background-color: $color-primary;
 }
 
 /* 
 =============================================================================================
-	BEM
+    BEM
 =============================================================================================
 */
 
@@ -214,11 +35,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-primary;
-
-    .logo-box {
-        width: 100%;
-    }
 
     .logo {
         width: 100%;
@@ -232,8 +48,6 @@ body {
     &__menu {
         list-style: none;
     }
-
-    &__item {}
 
     &__btn:link,
     &__btn:active,
@@ -278,136 +92,151 @@ body {
 
 .section {
     /* General Section styles*/
-    width: 100%;
+    min-width: 92%;
     height: 100%;
-    position: absolute;
-    margin-left:  8%;
+    position: fixed;
+    margin-left: 8%;
     overflow: hidden;
     top: 0;
     background: rgb(43, 46, 74);
-    visibility: hidden;
-    z-index: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.section-content {
-    /* General content styles*/
     padding: 2rem;
 }
 
+.present {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    a {
+        display: inline-block;
+    }
+}
+
 .section-home {
-    display: flex;
-    align-items: center;
     background-image: linear-gradient(90deg, rgba($color-primary, .8) 0%,
         rgba($color-quarternary, .8) 100%), url(../img/bg.jpg);
-
-    .section-content {}
 }
 
 .section-skills {
     background-image: linear-gradient(90deg, rgba($color-primary, .8) 0%,
         rgba($color-quarternary, .8) 100%), url(../img/bg-2.jpg);
+}
 
-    .section-content {
-        /* Specific code for skills content*/
+.skills {
+    &__block {
+        font-size: 2.6rem;
+        color: $color-secondary;
+        margin: 1rem 0rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        i {
+            width: 3rem;
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__bar {
+        display: inline-block;
+        width: 80%;
+        height: 2.6rem;
+        border-radius: .5rem;
+        text-align: center;
     }
 }
 
-.skill-table {
-    font-size: 1.8rem;
+.portfolio {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 
-    &__row {}
+    &__project {
+        max-width: 28%;
+        max-height: 100%;
+        margin: 1rem;
+        border-radius: .5rem;
+        display: block;
+        overflow: hidden; // keeps the image from removing the border radius.
+        transition: all 1s;
+        -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+        box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
 
-    &__label {
-        color: $color-white;
-        text-transform: uppercase;
-        padding-right: 1.8rem;
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
-    &__lvl {
-        background-color: white;
-        width: 80%;
-        text-align: center;
-        background: #ccc;
-        padding: 1rem 1.5rem;
-        color: $color-secondary;
-        font-weight: 700;
-        font-family: $font-sans;
-        border-radius: .5rem;
+    &__text {
+        color: $color-white;
+        padding: 1rem;
+        font-size: 1.8rem;
     }
 }
 
 /* 
 =============================================================================================
-	Skill Specific Levels
+    Skill Specific Levels
 =============================================================================================
 */
 #html-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 85%, rgba(80, 32, 58, 1) 85%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 85%, rgba(80, 32, 58, 1) 85%);
 }
 
 #css-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 90%, rgba(80, 32, 58, 1) 90%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 90%, rgba(80, 32, 58, 1) 90%);
 }
 
 #sass-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 70%, rgba(80, 32, 58, 1) 70%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 70%, rgba(80, 32, 58, 1) 70%);
 }
 
 #js-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 50%, rgba(80, 32, 58, 1) 50%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 50%, rgba(80, 32, 58, 1) 50%);
 }
 
 #git-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 50%, rgba(80, 32, 58, 1) 50%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 40%, rgba(80, 32, 58, 1) 40%);
+}
+
+#node-lvl {
+    background: rgb(204, 204, 204);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
 }
 
 #react-lvl {
     background: rgb(204, 204, 204);
-    background: linear-gradient(120deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
+    background: linear-gradient(90deg, rgba(204, 204, 204, 1) 30%, rgba(80, 32, 58, 1) 30%);
 }
+
 
 /* 
 =============================================================================================
-	Skill specific levels
+    Section About
 =============================================================================================
 */
+
 .section-about {
     background-image: linear-gradient(90deg, rgba($color-primary, .8) 0%,
         rgba($color-quarternary, .8) 100%), url(../img/bg-4.jpg);
 
-    .section-content {
-        color: $color-white;
+    .paragraph {
         width: 50%;
-        font-size: 1.8rem;
-    }
-
-    .nav {
-        display: none;
-    }
-}
-
-.about-list {
-    list-style: circle;
-    list-style-position: inside;
-
-    &__item {
-        padding: 1rem;
-
-        &--sub {}
-    }
-
-    &--sub {
-        list-style: square;
-        list-style-position: inside;
-        margin-left: 1rem;
     }
 }
 
@@ -422,110 +251,12 @@ body {
     }
 }
 
-/* 
-=============================================================================================
-	Typography
-=============================================================================================
-*/
-
-.heading-primary {
-    font-size: 2.8rem;
-    font-family: $font-serif;
-    color: $color-white;
-    font-weight: 700;
-
-    &--highlight {
-        color: $color-secondary;
-    }
-}
-
-.heading-secondary {
-    font-size: 2rem;
-    color: $color-secondary;
-}
-
-.paragraph {
-    font-family: $font-sans;
-    color: $color-white;
-}
-
-.italic {
-    font-weight: 100;
-}
 
 /* 
 =============================================================================================
-	Components
+    Functionality
 =============================================================================================
 */
-
-.btn {
-    padding: 1rem 2rem;
-    display: inline-block;
-    border-radius: .5rem;
-    text-decoration: none;
-    transition: all .5s;
-
-    &--white {
-        color: $color-white;
-        background: transparent;
-        border: 2px solid $color-white;
-    }
-
-    &--blue {
-        background-color: $color-primary;
-        color: $color-secondary;
-        border: 2px solid $color-primary;
-    }
-
-    &--list,
-    &--list:focus {
-        padding: .5rem;
-        height: 100%;
-        width: 25%;
-        font-size: 3rem;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        color: $color-secondary;
-        position: relative;
-    }
-
-    &--list::after {
-        @include clearfix;
-    }
-
-    &:hover {
-        transform: scale(1.2);
-    }
-
-    &:not(:last-child) {
-        margin-right: 1.5rem;
-    }
-}
-
-// Separated from normal styling for the purpose of functionality
-.btn--list {
-    display: none; // Do not remove this line.
-}
-
-.hamburguer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: hidden;
-}
-
-.cancel {
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: hidden;
-}
-
 .u-margin-bottom-small {
     margin-bottom: 1rem;
 }
@@ -538,96 +269,41 @@ body {
     margin-bottom: 3rem;
 }
 
-/* 
-=============================================================================================
-	Functionality
-=============================================================================================
-*/
-
 .active {
     visibility: visible;
     z-index: 1;
-    animation: expand .5s ease-out;
+    animation: expand 1.5s ease-in;
+    animation-fill-mode: forwards;
 }
 
-/* 
-=============================================================================================
-	Animations
-=============================================================================================
-*/
-
-@keyframes moveToTop {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    50% {
-        transform: translateY(-1rem);
-        opacity: .5;
-    }
-
-    100% {
-        transform: translateY(-2rem);
-        opacity: 0;
-    }
+.inactive {
+    z-index: 1;
+    animation: minimize 1.5s ease-in;
+    animation-fill-mode: forwards;
 }
 
-@keyframes expand {
-    0% {
-        opacity: .4;
-    }
-    50% {
-        opacity: .8;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* 
-=============================================================================================
-	Media Queries
-=============================================================================================
-*/
-
-@media (max-width: 575.98px) {}
-
-// Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
-    body {
+
+    body,
+    html {
         overflow: scroll;
+        overflow-x: hidden;
     }
 
     .header {
-        width: 100%;
-        height: 10rem;
-        flex-direction: row;
-        justify-content: space-between;
-        overflow: visible;
-        align-items: center;
         position: relative;
-    }
+        height: 10rem;
+        width: 100vw;
+        flex-direction: row;
 
-    .logo {
-        width: 20%;
+        .logo {
+            height: 100%;
+            width: auto;
+        }
     }
 
     .nav {
-        display: none;
-        position: absolute;
-        width: 15%;
-        right: 3%;
-        bottom: -90%;
-        z-index: 10;
-        background-color: $color-primary;
-        border-bottom-right-radius: 3px;
-        border-bottom-left-radius: 3px;
-
-        &__menu {
-            display: flex;
-            flex-direction: column;
-        }
+        width: auto;
 
         &__item {
             display: inline-block;
@@ -636,27 +312,10 @@ body {
         &__btn:link,
         &__btn:active,
         &__btn:visited {
-            position: relative;
-            display: block;
-            color: $color-secondary;
-            font-size: 1.8rem;
-            padding: .8rem;
-
             span {
                 display: none;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            i {
-                transition: all .5s;
-            }
-
-            img {
-                width: 2rem;
-                height: 2rem;
+                position: relative;
+                transform: translate(0);
             }
 
             &:hover {
@@ -664,67 +323,82 @@ body {
             }
 
             &:hover i {
-                transform: translateY(-1.5rem);
-                opacity: 0;
+                opacity: 1;
+                transform: translate(0);
             }
 
             &:hover span {
-                display: block;
+                display: none;
             }
         }
     }
 
-
     .section {
-        padding: 1rem;
-        margin: 0;
-        margin-top: 10rem;
+        position: relative;
+        margin-left: 0;
+        min-height: 100vh;
+        padding: 5rem;
     }
 
-    .section-content {
-        padding: 1rem;
+    .section-skills {
+        margin-top: -1rem;
+        background-color: $color-primary;
+        background-image: none;
+        z-index: -1;
+    }
+
+    .portfolio {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+
+        &__project {
+            max-width: 100%;
+            max-height: 100%;
+            // border: solid 5px $color-quarternary;
+            margin: 5rem;
+            border-radius: .5rem;
+            display: block;
+            overflow: hidden;
+            transition: all 1s;
+            -webkit-box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+            box-shadow: 13px 13px 20px 5px rgba(0, 0, 0, 0.8);
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+
+        &__text {
+            color: $color-white;
+            padding: 1rem;
+        }
     }
 
     .section-about {
-
-        .section-content {
+        .paragraph {
             width: 100%;
         }
-
-        .nav {
-            display: block;
-            position: absolute;
-            right: 0%;
-            bottom: 5%;
-            border-top-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
-        }
     }
 
-    .skill-table {
-        font-size: 1.4rem;
+    .heading-secondary {
+        text-align: center;
     }
 
-    .about-list {
-        font-size: 1.3rem;
+    .inactive {
+        z-index: 1;
+        animation: none;
+        animation-fill-mode: none;
     }
 
-    .btn--list {
-        display: block;
-    }
-
-    .menu-active {
-        display: block;
-        z-index: 2;
-    }
-
-    .paragraph {
-        font-size: 1.3rem;
+    .active {
+        z-index: 1;
+        animation: none;
+        animation-fill-mode: none;
     }
 }
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {}
-
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) {}
